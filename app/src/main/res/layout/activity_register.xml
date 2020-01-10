@@ -37,12 +37,39 @@
 
 
         <EditText
+            android:id="@+id/etPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_top"
-            android:hint="Mobile Number/Email"
-            android:inputType="textEmailAddress|number"
+            android:hint="Mobile Number"
+            android:inputType="number"
             android:padding="15dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etSMSCode"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_top"
+                android:hint="SMS Code"
+                android:inputType="number"
+                android:padding="15dp" />
+
+            <Button
+                android:id="@+id/btnSendSMS"
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:text="Send"
+                android:textAllCaps="false"
+                android:textColor="#FE8034"
+                android:textSize="17sp"/>
+
+        </LinearLayout>
 
         <EditText
             android:layout_width="match_parent"

@@ -12,6 +12,12 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/navigation_message"
+        android:name="com.example.daraz.ui.message.MessageFragment"
+        android:label="Message"
+        tools:layout="@layout/fragment_message" />
+
+    <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.daraz.ui.dashboard.DashboardFragment"
         android:label="Cart"

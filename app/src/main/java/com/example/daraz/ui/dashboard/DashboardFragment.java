@@ -11,10 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.daraz.R;
 
 public class DashboardFragment extends Fragment {
+    private RecyclerView recyclerView;
 
     private DashboardViewModel dashboardViewModel;
 
