@@ -17,49 +17,69 @@
 
             <ImageView
                 android:id="@+id/ivProductImage"
-                android:src="@drawable/ic_launcher_background"
                 android:layout_width="150dp"
-                android:layout_height="150dp"/>
+                android:layout_height="150dp"
+                android:src="@drawable/ic_launcher_background" />
 
             <TextView
                 android:id="@+id/tvProduct_name"
                 android:layout_width="wrap_content"
-                android:textSize="20sp"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/ivProductImage"
                 android:text="Name"
-                android:layout_below="@+id/ivProductImage"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvDescription"
                 android:layout_width="wrap_content"
-                android:textSize="20sp"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/tvProduct_name"
                 android:text="Description"
-                android:layout_below="@+id/tvProduct_name"/>
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tvPrice"
                 android:layout_width="wrap_content"
-                android:textSize="20sp"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/tvDescription"
                 android:text="Price"
-                android:layout_below="@+id/tvDescription"/>
+                android:textColor="@color/colorBrand"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvOldPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvPrice"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tvDiscountRate"
                 android:layout_width="wrap_content"
-                android:textSize="20sp"
                 android:layout_height="wrap_content"
-                android:text="Discount Rate"
-                android:layout_below="@+id/tvPrice"/>
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:background="@color/colorBrand"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="108dp"
+                android:layout_marginTop="12dp"
+                android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/tvRating"
+            <RatingBar
                 android:layout_width="wrap_content"
-                android:textSize="20sp"
                 android:layout_height="wrap_content"
-                android:text="Rating"
-                android:layout_below="@+id/tvDiscountRate"/>
+                android:isIndicator="true"
+                android:numStars="5"
+                android:stepSize="1"
+                android:rating="5"
+                android:id="@+id/pop_ratingbar"
+                android:layout_below="@+id/tvOldPrice"
+                android:progressTint="@color/colorBrand"
+                style="?android:attr/ratingBarStyleSmall"
+                />
 
         </RelativeLayout>
 

@@ -21,7 +21,6 @@ public class LoginBLL {
         try {
             Response<SignUpResponse> loginResponse = usersCall.execute();
             if (loginResponse.isSuccessful()) {
-
                 URL.token += loginResponse.body().getToken();
                 isSuccessful = true;
             }

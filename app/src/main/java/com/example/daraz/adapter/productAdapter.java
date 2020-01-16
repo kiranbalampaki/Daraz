@@ -1,10 +1,12 @@
 package com.example.daraz.adapter;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,11 +41,20 @@ public class productAdapter extends RecyclerView.Adapter<productAdapter.ItemView
         final Product item=itemList.get(position);
         holder.tvName.setText(item.getName());
         holder.tvDescription.setText(item.getDescription());
-        holder.tvPrice.setText(item.getPrice() + "");
-        holder.tvDiscountRate.setText(item.getDiscount_rate() + "");
-        holder.tvRating.setText(item.getRating() + "");
-      Picasso.get().load(URL.base_url_image+itemList.get(position).getImage()).into(holder.imgImage);
-        //Picasso.get().load(Url.base_url_image+itemList.get(position).getProductImage()).into(holder.imgImage);
+        if (item.getDiscount_rate() != 0){
+            holder.tvDiscountRate.setText(" -" + item.getDiscount_rate() + "% ");
+            double price = item.getPrice();
+            double discount_rate = item.getDiscount_rate();
+            double new_price = price - ((discount_rate/100) * price);
+            holder.tvPrice.setText("Rs." + new_price);
+            holder.tvOldPrice.setText("Rs." + item.getPrice());
+            holder.tvOldPrice.setPaintFlags(holder.tvOldPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        }
+        else{
+            holder.tvPrice.setText("Rs." + item.getPrice());
+        }
+        holder.pop_ratingbar.setRating(item.getRating());
+        Picasso.get().load(URL.base_url_image+itemList.get(position).getImage()).into(holder.imgImage);
 
     }
 
@@ -54,15 +65,17 @@ public class productAdapter extends RecyclerView.Adapter<productAdapter.ItemView
 
     public class ItemViewHolder extends RecyclerView.ViewHolder{
         ImageView imgImage;
-        TextView tvName, tvDescription, tvPrice, tvDiscountRate, tvRating;
+        TextView tvName, tvDescription, tvPrice, tvOldPrice, tvDiscountRate;
+        RatingBar pop_ratingbar;
         public ItemViewHolder(@NonNull View itemView){
             super(itemView);
             imgImage=itemView.findViewById(R.id.ivProductImage);
             tvName=itemView.findViewById(R.id.tvProduct_name);
             tvDescription=itemView.findViewById(R.id.tvDescription);
             tvPrice=itemView.findViewById(R.id.tvPrice);
+            tvOldPrice=itemView.findViewById(R.id.tvOldPrice);
             tvDiscountRate=itemView.findViewById(R.id.tvDiscountRate);
-            tvRating=itemView.findViewById(R.id.tvRating);
+            pop_ratingbar=itemView.findViewById(R.id.pop_ratingbar);
         }
     }
 }
