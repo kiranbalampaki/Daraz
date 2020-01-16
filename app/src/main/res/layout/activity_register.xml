@@ -35,6 +35,23 @@
         android:layout_alignParentBottom="true"
         android:gravity="center">
 
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_top"
+            android:hint="Mobile Number"
+            android:inputType="textPersonName"
+            android:padding="15dp" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_top"
+            android:hint="Mobile Number"
+            android:inputType="textEmailAddress"
+            android:padding="15dp" />
 
         <EditText
             android:id="@+id/etPhoneNumber"
@@ -72,6 +89,7 @@
         </LinearLayout>
 
         <EditText
+            android:id="@+id/etPasswordRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_middle"
@@ -79,16 +97,8 @@
             android:inputType="textPassword"
             android:padding="15dp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edit_text_bottom"
-            android:hint="Confirm Password"
-            android:inputType="textPassword"
-            android:padding="15dp" />
-
-
         <Button
+            android:id="@+id/btnSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
